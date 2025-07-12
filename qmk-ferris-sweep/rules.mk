@@ -1,0 +1,12 @@
+# BOOTLOADER = atmel-dfu
+MOUSEKEY_ENABLE = yes
+RGBLIGHT_ENABLE = no
+LTO_ENABLE = yes # slow down compilation time but the compiled file size is smaller
+COMBO_ENABLE = yes
+COMMAND_ENABLE = no
+AUTO_SHIFT_ENABLE = no
+CAPS_WORD_ENABLE = yes
+# KEY_LOCK_ENABLE = yes
+TAP_DANCE_ENABLE = yes
+CONSOLE_ENABLE = no
+# SRC += features/caps_word.c
