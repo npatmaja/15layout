@@ -111,9 +111,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Symbols
 // -----------------------------------------------------------------------------
   [_SYMB] = LAYOUT_split_3x5_2(
-    KC_EXLM ,KC_AT   ,KC_HASH ,KC_DLR  ,KC_PERC ,              ASC_CIRC ,KC_AMPR ,KC_ASTR ,ASC_COP ,ASC_CCL ,
-    KC_PIPE ,KC_PMNS ,ASC_SQT ,ASC_DQT ,KC_GRV  ,              KC_QUOT  ,KC_COLN ,ASC_TILD,ASC_SAR ,ASC_DAR ,
-    KC_BSLS ,KC_UNDS ,KC_LCBR ,KC_LBRC ,KC_EQL  ,              ASC_BKT  ,KC_RBRC ,KC_RCBR ,ASC_CEQ ,ASC_SSL ,
+    KC_EXLM ,KC_AT   ,KC_HASH ,KC_DLR  ,KC_PERC ,              KC_CIRC ,KC_AMPR ,KC_ASTR ,ASC_COP ,ASC_CCL ,
+    KC_PIPE ,KC_PMNS ,KC_PPLS ,KC_TILD ,KC_GRV  ,              KC_QUOT  ,KC_COLN ,ASC_DQT ,ASC_SAR ,ASC_DAR ,
+    KC_BSLS ,KC_UNDS ,KC_LCBR ,KC_LBRC ,KC_EQL  ,              KC_DQT  ,KC_RBRC ,KC_RCBR ,ASC_CEQ ,ASC_SSL ,
                                    _______ ,XXXXXXX ,      KC_RPRN, KC_LPRN
   ),
 
@@ -121,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Navigation
 // -----------------------------------------------------------------------------
   [_NAVI] = LAYOUT_split_3x5_2(
-    XXXXXXX ,KC_TAB  ,CC_BTAB ,CC_NTAB ,KC_SPC  ,              XXXXXXX ,CC_WLSEL,CC_WLMOV,CC_WRMOV,CC_WRSEL,
+    KC_ESC ,KC_TAB  ,CC_BTAB ,CC_NTAB ,KC_SPC   ,              KC_ESC ,CC_WLSEL,CC_WLMOV,CC_WRMOV,CC_WRSEL ,
     KC_LSFT ,KC_LCTL ,KC_LALT ,KC_LGUI ,KC_ENT  ,              KC_TAB  ,KC_LEFT ,KC_DOWN ,KC_UP   ,KC_RGHT ,
     U_UND   ,U_CUT   ,U_CPY   ,U_PST   ,U_RDO   ,              _______ ,KC_HOME ,KC_PGDN ,KC_PGUP ,KC_END  ,
                                    CC_LFUN , CC_LWSP ,     XXXXXXX ,_______
@@ -372,7 +372,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         SEND_STRING(SS_RALT("'"));
         return false;
       case ASC_DQT:
-        SEND_STRING(SS_RALT(SS_LSFT("\"")));
+        SEND_STRING("\"");
         return false;
       case ASC_CIRC:
         SEND_STRING(SS_RALT("^"));
